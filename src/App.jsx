@@ -1,5 +1,7 @@
+import Dropdown from "./components/Dropdown";
+
 const App = () => {
-  return <h1>Hello World!</h1>;
-}
+  return <Dropdown>{/* <div></div> */}</Dropdown>;
+};
 
 export default App;
