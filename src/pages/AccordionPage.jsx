@@ -22,7 +22,11 @@ const AccordionPage = () => {
     },
   ];
 
-  return <Accordion items={items} />;
+  return (
+    <div class="flex">
+      <Accordion items={items} />
+    </div>
+  );
 };
 
 export default AccordionPage;

@@ -34,6 +34,7 @@ const Accordion = ({ items }) => {
       </div>
     );
   });
+
   return (
     <div className="border-x border-t rounded">
       {renderedItems}
