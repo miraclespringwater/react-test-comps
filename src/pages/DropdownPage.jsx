@@ -14,8 +14,6 @@ const DropdownPage = () => {
     { label: "Blue", value: "blue" },
   ];
 
-  console.log(options);
-
   return (
     <div className="flex">
       <Dropdown

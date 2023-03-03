@@ -1,15 +1,33 @@
-import { useContext } from "react";
-import NavigationContext from "../context/navigation";
+import classNames from "classnames";
+import useNavigation from "../hooks/use-navigation";
 
-const Link = ({ to, children }) => {
-  const { navigate } = useContext(NavigationContext);
+const Link = ({
+  to,
+  children,
+  className,
+  activeClassName,
+}) => {
+  const { navigate, currentPath } = useNavigation();
+
+  const classes = classNames(
+    className,
+    "text-blue-500",
+    currentPath === to && activeClassName
+  );
 
   const handleClick = (e) => {
+    if (e.metaKey || e.ctrlKey) {
+      return;
+    }
     e.preventDefault();
     navigate(to);
   };
 
-  return <a onClick={handleClick}>{children}</a>;
+  return (
+    <a className={classes} onClick={handleClick} href={to}>
+      {children}
+    </a>
+  );
 };
 
 export default Link;

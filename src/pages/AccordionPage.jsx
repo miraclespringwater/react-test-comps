@@ -23,7 +23,7 @@ const AccordionPage = () => {
   ];
 
   return (
-    <div class="flex">
+    <div className="flex">
       <Accordion items={items} />
     </div>
   );
